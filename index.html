@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiridon Konofaos — Web Developer Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #e8e8e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .resume {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-radius: 0;
+    }
+
+    /* ─── LEFT COLUMN ─── */
+    .sidebar {
+      width: 32%;
+      background: #2C3E3F;
+      color: #d9e2e0;
+      padding: 20px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar .name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .sidebar .title {
+      font-size: 14px;
+      font-weight: 400;
+      color: #a0b8b3;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 8px 0;
+    }
+
+    .sidebar h3 {
+      font-size: 11px;
+      font-weight: 600;
+      color: #8aa39e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .sidebar .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #c8d4d0;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .sidebar .contact-item .icon {
+      width: 16px;
+      text-align: center;
+      color: #5f8a83;
+      flex-shrink: 0;
+    }
+
+    .sidebar .contact-item a {
+      color: #c8d4d0;
+      text-decoration: none;
+    }
+    .sidebar .contact-item a:hover {
+      color: #fff;
+    }
+
+    .skill-group {
+      margin-bottom: 18px;
+    }
+
+    .skill-group h4 {
+      font-size: 11px;
+      font-weight: 600;
+      color: #8aa39e;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+    }
+
+    .skill-tags span {
+      font-size: 11px;
+      color: #c8d4d0;
+      line-height: 1.6;
+    }
+
+    .skill-tags span::after {
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 2px;
+      background: #5f8a83;
+      border-radius: 50%;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .skill-tags span:last-child::after {
+      display: none;
+    }
+
+    .sidebar .education-item {
+      font-size: 12px;
+      color: #c8d4d0;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .sidebar .education-item strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* ─── RIGHT COLUMN ─── */
+    .main {
+      width: 68%;
+      padding: 40px 36px;
+    }
+
+    .main h2 {
+      font-size: 11px;
+      font-weight: 600;
+      color: #3D7A7A;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #3D7A7A;
+    }
+
+    .summary-text {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #3a3a3a;
+      margin-bottom: 28px;
+    }
+
+    .job {
+      margin-bottom: 22px;
+      padding-left: 14px;
+      border-left: 3px solid #3D7A7A;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .job-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .job-company {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .job-date {
+      font-size: 11px;
+      color: #888;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .job-description {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .job-description ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 6px;
+    }
+
+    .job-description ul li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 4px;
+    }
+
+    .job-description ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #3D7A7A;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .resume {
+        box-shadow: none;
+        border-radius: 0;
+        min-height: auto;
+      }
+      .sidebar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+
+    <!-- LEFT COLUMN -->
+    <div class="sidebar">
+      <div class="name">Spiridon<br>Konofaos</div>
+      <div class="title">Web Developer / Designer</div>
+
+      <div class="divider"></div>
+
+      <h3>Contact</h3>
+      <div class="contact-item">
+        <span class="icon">📍</span>
+        <span>Tampa, FL</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📞</span>
+        <span>813-728-1337</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">✉️</span>
+        <a href="mailto:spyros.konofaos1@gmail.com">spyros.konofaos1@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">🌐</span>
+        <a href="https://spyroskonofaos.com" target="_blank">spyroskonofaos.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📁</span>
+        <a href="https://spiridonwp.com" target="_blank">spiridonwp.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">💻</span>
+        <a href="https://github.com/SpyrosKo" target="_blank">github.com/SpyrosKo</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">🔗</span>
+        <span>linkedin.com/in/spiridon</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Skills</h3>
+
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="skill-tags">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Front-End</h4>
+        <div class="skill-tags">
+          <span>Responsive Layouts</span><span>Flexbox</span><span>CSS Grid</span><span>Custom Properties</span><span>Cross-Browser Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>CMS & Builders</h4>
+        <div class="skill-tags">
+          <span>WordPress</span><span>Elementor</span><span>Divi (learning)</span><span>Gutenberg</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Tools</h4>
+        <div class="skill-tags">
+          <span>Git/GitHub</span><span>Figma</span><span>Photoshop</span><span>Asana</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Optimization</h4>
+        <div class="skill-tags">
+          <span>SEO</span><span>Accessibility</span><span>Performance</span><span>Cloudflare CDN</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Hosting</h4>
+        <div class="skill-tags">
+          <span>Bluehost</span><span>IONOS</span><span>InfinityFree</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Education</h3>
+      <div class="education-item">
+        <strong>University of South Florida</strong><br>
+        Web Design Degree
+      </div>
+      <div class="education-item">
+        <strong>freeCodeCamp</strong><br>
+        Responsive Web Design Certificate
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="main">
+      <h2>Summary</h2>
+      <div class="summary-text">
+        Front-end developer who builds WordPress sites that actually look good and work right across devices. HTML, CSS, JavaScript, Elementor — and picking up Divi. I take layouts and client direction and turn them into structured pages with clean spacing, visual consistency, and SEO that doesn't feel like an afterthought.
+      </div>
+
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Front-End Developer</span>
+            <span class="job-company"> — Holistic Moms Network</span>
+          </div>
+          <span class="job-date">2023</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Built responsive WordPress pages — clean HTML/CSS/JS, better readability, solid mobile behavior. Worked from design direction and client feedback to get everything launch-ready.</li>
+            <li>Improved content structure and metadata so pages actually showed up in search. Handed off after thorough self-review.</li>
+            <li>Implemented Cloudflare SSL and caching — better security, faster load times.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Front-End Developer</span>
+            <span class="job-company"> — Drone Forward</span>
+          </div>
+          <span class="job-date">2021–2022</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Recreated Figma layouts in WordPress — spacing, hierarchy, brand feel all intact. Kept pages fast and responsive across devices.</li>
+            <li>Cleaned up content flow for clearer navigation and better SEO. Selected imagery that fit the brand and kept layouts clean.</li>
+            <li>Used Asana to stay coordinated with the design team and keep timelines on track.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Front-End Developer</span>
+            <span class="job-company"> — John C. Rhead</span>
+          </div>
+          <span class="job-date">2020</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Customized WordPress templates with HTML, CSS, JS, and light PHP to match project specs.</li>
+            <li>Turned static mockups into responsive pages tested across browsers and devices.</li>
+            <li>Improved layout structure and metadata for better readability and search visibility.</li>
+            <li>Managed Bluehost hosting, kept the site updated and running.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
